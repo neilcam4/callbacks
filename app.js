@@ -1,3 +1,8 @@
+// $(document).ready(function(){
+//     document.querySelectorAll('#button1').addEventListener('click', getWeather)
+// })
+
+
 const players = [
     {name: "Christiano Ronaldo", team:"Juventus"},
     {name: "Lionel Messi", team: "Barcelona"}
@@ -19,7 +24,33 @@ document.getElementById("footballers").innerHTML = output
 
 createPlayer({name:"Harry Kane", team:"Spurs"}, getPlayers)
 
+function getMessage(){
+    let url = "https://chitter-backend-api.herokuapp.com/peeps"
+    fetch(url)
+    .then(function(res){
+        return res.json()
+    })
+    .then(function(data){
+        console.log(data[0].body)
+    })
+}
+getMessage()
 
+
+// function getWeather(){
+//     let url = "https://chitter-backend-api.herokuapp.com/peeps"
+//     fetch(url)
+//     .then(function(res){
+//         console.log(res)
+//         return res.json()
+//     })
+//     .then(function(data){
+//         console.log(data[0].body)
+//         return data
+      
+//     })
+// }
+// getWeather()
 
 
 
